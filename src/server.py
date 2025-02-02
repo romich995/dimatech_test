@@ -3,6 +3,7 @@ from sqlalchemy.ext.asyncio import create_async_engine
 from contextvars import ContextVar
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import sessionmaker
+import os
 
 from user import user_bp
 from administrator import administartor_bp
@@ -10,9 +11,9 @@ from transaction.view import transaction_bp
 from settings import DB_CONN
 
 app = Sanic("my_app")
-app.config.SECRET_USER = "jfgjjhbjbbjkb"
-app.config.SECRET_ADMINISTRATOR = "jfgjjhbjbbjkb"
-app.config.SHA256_SECRET_KEY = 'dsgfgfdgsd'
+app.config.SECRET_USER = os.environ.get('SECRET_USER')
+app.config.SECRET_ADMINISTRATOR = os.environ.get('SECRET_ADMINISTRATOR')
+app.config.SHA256_SECRET_KEY = os.environ.get('SHA256_SECRET_KEY')
 
 bind = create_async_engine(DB_CONN, echo=True)
 
@@ -36,4 +37,4 @@ app.blueprint(administartor_bp)
 app.blueprint(transaction_bp)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=12340)
+    app.run(host='0.0.0.0', port=12340,debug=True)

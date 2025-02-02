@@ -1,11 +1,18 @@
 services:
   web:
     build:
-      dockerfile: ./src/dockerfile
+      context: ./src
+      dockerfile: dockerfile
     environment:
-      POSTGRRES_DB: "testdb"
+      SHA256_SECRET_KEY: 'dsgfgfdgsd'
+      SECRET_ADMINISTRATOR: "jfgjjhbjbbjkb"
+      SECRET_USER: "jfgjjhbjbbjkb"
+      POSTGRES_DB: "db_cvs5"
       POSTGRES_USER: "test"
-      POSTGRES_PASSWORD: "test"
+      POSTGRES_PASSWORD: "5qJZDWLLNlHFEdR56rn8mJRg03sno3V1"
+      POSTGRES_HOST: "dpg-cueg6thu0jms73caudl0-a.oregon-postgres.render.com"
+      POSTGRES_PORT: "5432"
+      SALT: 'dsngbdjkfmld;'
     ports:
       - "12340:12340"
     depends_on:
