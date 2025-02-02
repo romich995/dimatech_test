@@ -49,7 +49,6 @@ class Replenishment(Base):
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     amount = Column(DECIMAL(12, 2))
     account_id = Column(ForeignKey("account.id", ondelete="CASCADE"))
-    is_executed = Column(Boolean())
 
     account = relationship("Account", back_populates='replenishments')
 
