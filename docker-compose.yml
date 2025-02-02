@@ -7,7 +7,7 @@ services:
       SHA256_SECRET_KEY: 'dsgfgfdgsd'
       SECRET_ADMINISTRATOR: "jfgjjhbjbbjkb"
       SECRET_USER: "jfgjjhbjbbjkb"
-      POSTGRES_DB: "testdb"
+      POSTGRES_DB: "test"
       POSTGRES_USER: "test"
       POSTGRES_PASSWORD: "test"
       POSTGRES_HOST: "db"
