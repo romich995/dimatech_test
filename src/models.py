@@ -51,9 +51,4 @@ class Replenishment(BaseModel):
 
     account = relationship("Account", back_populates='replenishments')
 
-if __name__ == '__main__':
-    from sqlalchemy import create_engine
-    DB_CONN = 'postgresql://test:5qJZDWLLNlHFEdR56rn8mJRg03sno3V1@dpg-cueg6thu0jms73caudl0-a.oregon-postgres.render.com/db_cvs5'
 
-    engine = create_engine(DB_CONN)
-    Base.metadata.create_all(engine)
