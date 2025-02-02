@@ -7,10 +7,10 @@ services:
       SHA256_SECRET_KEY: 'dsgfgfdgsd'
       SECRET_ADMINISTRATOR: "jfgjjhbjbbjkb"
       SECRET_USER: "jfgjjhbjbbjkb"
-      POSTGRES_DB: "db_cvs5"
+      POSTGRES_DB: "testdb"
       POSTGRES_USER: "test"
-      POSTGRES_PASSWORD: "5qJZDWLLNlHFEdR56rn8mJRg03sno3V1"
-      POSTGRES_HOST: "dpg-cueg6thu0jms73caudl0-a.oregon-postgres.render.com"
+      POSTGRES_PASSWORD: "test"
+      POSTGRES_HOST: "db"
       POSTGRES_PORT: "5432"
       SALT: 'dsngbdjkfmld;'
     ports:
@@ -24,7 +24,7 @@ services:
     image: postgres:14.8-alpine3.18
     restart: always
     environment:
-      POSTGRRES_DB: "testdb"
+      POSTGRES_DB: "testdb"
       POSTGRES_USER: "test"
       POSTGRES_PASSWORD: "test"
     volumes:
