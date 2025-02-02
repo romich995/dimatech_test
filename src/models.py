@@ -1,6 +1,8 @@
 # ./models.py
 from sqlalchemy import INTEGER, Column, ForeignKey, String, DECIMAL, Boolean
 from sqlalchemy.orm import declarative_base, relationship
+from sqlalchemy.dialects.postgresql import UUID
+import uuid
 
 Base = declarative_base()
 
@@ -42,9 +44,9 @@ class Account(BaseModel):
                 "balance": self.balance,
                 "user_id": self.user_id}
 
-class Replenishment(BaseModel):
+class Replenishment(Base):
     __tablename__ = "replenishment"
-
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     amount = Column(DECIMAL(12, 2))
     account_id = Column(ForeignKey("account.id", ondelete="CASCADE"))
     is_executed = Column(Boolean())
