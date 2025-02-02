@@ -46,6 +46,6 @@ password: "test"
 
 ## Примеры запросов:
 
-request_examples.md
+request_examples.html
 
 
