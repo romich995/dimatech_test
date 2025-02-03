@@ -4,6 +4,8 @@
 
 ### Копируем репозиторий
 ```bash
+mkdir accounts
+cd ./accounts
 git clone https://github.com/romich995/dimatech_test.git
 ```
 
