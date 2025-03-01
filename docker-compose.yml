@@ -5,7 +5,7 @@ services:
       dockerfile: dockerfile
     environment:
       SHA256_SECRET_KEY: 'dsgfgfdgsd'
-      SECRET_ADMINISTRATOR: "jfgjjhbjbbjkb"
+      SECRET_ADMINISTRATOR: "jfgjjhbjbbjkb1"
       SECRET_USER: "jfgjjhbjbbjkb"
       POSTGRES_DB: "test"
       POSTGRES_USER: "test"
